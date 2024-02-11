@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+*/ p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(2, 1fr);
+  min-height: 100%;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.panel .text {
+  background-color: #eeeee7;
+  padding: 30px 60px;
+}
+
+/* Welcome */
+
+.panel.welcome {
+  background-color: rgba(165, 42, 42, 0.904);
+  padding: 30px 60px;
+  grid-auto-rows: 1fr;
+}
+
+.panel.welcome nav a {
+  color: azure;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.panel.welcome p {
+  color: rgb(222, 222, 222);
+  max-width: 540px;
+  line-height: 2em;
+}
+
+.panel.welcome h1 {
+  color: rgb(237, 184, 184);
+  font-weight: 900;
+  font-size: 3em;
+}
+
+.panel.welcome footer {
+  align-self: end;
+}
+
+/* About */
+
+.panel.about {
+  grid-template-rows: 3fr 1fr;
+  overflow: hidden;
+}
+
+/* Portfolio */
+
+.panel.portfolio {
+  grid-template-rows: 1fr 3fr;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .panel.portfolio {
+    grid-column: span 2;
+    grid-template-columns: repeat(2, 1fr);
+    /* get rid of white space after */
+    grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 400px 400px;
+  }
+
+  .panel.about {
+    grid-row: 2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  .panel img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  main {
+    grid-template-rows: 700px 600px 600px;
+  }
+
+  .panel.about,
+  .panel.portfolio {
+    grid-template-columns: 1fr;
+    grid-column: span 1;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid #eee;
+  }
+}
